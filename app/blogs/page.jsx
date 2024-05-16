@@ -1,9 +1,16 @@
 'use client';
-import React from 'react';
+
+import React, { useEffect, useState } from 'react';
+
 import BlogItem from '../components/BlogItem';
 
 function Blog() {
-  const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const storedBlogs = JSON.parse(localStorage.getItem('blogs')) || [];
+    setBlogs(storedBlogs);
+  }, []);
   return (
     <>
       <h2 className="text-center mt-4 px-2 text-2xl py-2 font-bold">
