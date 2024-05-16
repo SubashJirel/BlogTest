@@ -20,7 +20,7 @@ function AddBlogFin() {
       action={addBlogHandler}
       className="max-w-md mx-auto mt-8 p-8 bg-white rounded shadow-md"
     >
-      <h2 className="text-2xl text-green-500 font-semibold mb-6">
+      <h2 className="text-2xl text-black font-semibold mb-6">
         Create a New Blog Post
       </h2>
 

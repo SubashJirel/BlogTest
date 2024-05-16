@@ -4,7 +4,9 @@ import AddBlogFin from '../../components/forms/AddBlogFin';
 function AddBlogPage() {
   return (
     <>
-      <p>From the component</p>
+      <h2 className="text-center mt-4 px-2 text-2xl py-2 font-bold">
+        Add Blog Page
+      </h2>
 
       <AddBlogFin />
     </>
