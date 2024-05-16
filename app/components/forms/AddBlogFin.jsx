@@ -1,8 +1,10 @@
 'use client';
+import { useRef } from 'react';
 import Button from '../../../app/ui/Buttons';
 import { addBlog } from '../../../actions/action';
 
 function AddBlogFin() {
+  const formRef = useRef(null);
   const addBlogHandler = async (formData) => {
     try {
       const newBlog = await addBlog(formData);
@@ -11,12 +13,15 @@ function AddBlogFin() {
       const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
       blogs.push(newBlog);
       localStorage.setItem('blogs', JSON.stringify(blogs));
+      // Clear the form input values
+      formRef.current.reset();
     } catch (error) {
       console.error('Error adding blog:', error);
     }
   };
   return (
     <form
+      ref={formRef}
       action={addBlogHandler}
       className="max-w-md mx-auto mt-8 p-8 bg-white rounded shadow-md"
     >
